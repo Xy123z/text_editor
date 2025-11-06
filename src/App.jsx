@@ -44,10 +44,10 @@ function App() {
     <Sidebar mode={mode} addFunction={changeFunction}/>
     <div className="container my-3">
       <Routes>
-        <Route path="/" element={<TextArea default={"enter some text here"} mode={mode} change={changeText}/>}/>
+        <Route path="/" element={<TextArea default={"enter some text here"} mode={mode} change={changeText} textValue={text}/>}/>
         <Route path="/about" element={<About mode={mode}/>}/>
       </Routes>
-      <Functionality value={functionality} removeFunctionality={changeFunction} mode={mode} textVal={text}/>
+      <Functionality value={functionality} removeFunctionality={changeFunction} mode={mode} textVal={text} updateText={changeText}/>
     </div>
   </>
 )
