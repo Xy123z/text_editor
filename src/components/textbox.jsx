@@ -2,10 +2,16 @@
  import Analytics from './analytics'
  import Alert from './alerts'
  export default function TextArea(props){
-     const [value, setValue] = useState('')
+     const [value, setValue] = useState(props.textValue || '')
      const [caseBtnState, setCaseBtnState] = useState(false)
      const [copy, setCopy] = useState(false)
      const [alertType, setAlertType] = useState('')
+     useEffect(() => {
+        if(props.textValue !== undefined) {
+            setValue(props.textValue);
+        }
+    }, [props.textValue]);
+    
      useEffect(() => {props.change(value)} , [value])
      const changeValue = (event) => {
          setValue(event.target.value);
