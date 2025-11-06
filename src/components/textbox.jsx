@@ -1,4 +1,4 @@
- import { useState } from 'react'
+ import { useState, useEffect} from 'react'
  import Analytics from './analytics'
  import Alert from './alerts'
  export default function TextArea(props){
@@ -6,7 +6,7 @@
      const [caseBtnState, setCaseBtnState] = useState(false)
      const [copy, setCopy] = useState(false)
      const [alertType, setAlertType] = useState('')
-     props.change(value)
+     useEffect(() => {props.change(value)} , [value])
      const changeValue = (event) => {
          setValue(event.target.value);
     }
