@@ -13,7 +13,7 @@
       return words.filter( w => w === word.toLowerCase()).length
 }
 const replaceWord = (str,word1,word2) => {
-  str.toLowerCase().replaceAll(word1.toLowerCase(),word2.toLowerCase())
+ return str.toLowerCase().replaceAll(word1.toLowerCase(),word2.toLowerCase())
 }
      if(props.value === "no_of_occur"){
 
@@ -36,7 +36,12 @@ const replaceWord = (str,word1,word2) => {
    <textarea className={`mb-4 form-control bg-${props.mode === 'dark' ? 'dark' : 'light'}`} id="exampleFormControlTextarea1" rows="1" cols="10" placeholder="enter the word to be replaced" value={word} onChange={changeWord}></textarea>
     <textarea className={`mb-4 form-control bg-${props.mode === 'dark' ? 'dark' : 'light'}`} id="exampleFormControlTextarea1" rows="1" cols="10" placeholder="enter the new word" value={word1} onChange={changeWord1}></textarea>
     <div className="d-flex ">
-    <button type="button" className={`mt-4 btn btn-outline-${props.mode === "dark" ? "light" : "dark"}`} onClick={() => {replaceWord(props.textVal,word,word1)}}>submit</button>
+    <button type="button" className={`mt-4 btn btn-outline-${props.mode === "dark" ? "light" : "dark"}`} 
+    onClick={
+      () => {const newText = replaceWord(props.textVal,word,word1)
+             props.updateText(newText)
+    }}>
+      submit</button>
   <button type="button" className={`ms-4 mt-4 btn btn-outline-${props.mode === "dark" ? "light" : "dark"}`} onClick={() => {props.removeFunctionality('')}}>close</button>
   </div>
   </div>
