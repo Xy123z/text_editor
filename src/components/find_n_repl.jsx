@@ -25,10 +25,10 @@
          return(
              <div className={`card ${props.mode === "dark" ? "text-bg-dark" : ""}`} style={{width: "18rem"}}>
   <div className="card-body">
-    <h5 className="card-title">find and replace</h5>
-   <textarea className={`form-control bg-${props.mode === 'dark' ? 'dark' : 'light'}`} id="exampleFormControlTextarea1" rows="6" cols="40" placeholder="enter the word to be replaced" value={word} onChange={changeWord}></textarea>
-    <textarea className={`form-control bg-${props.mode === 'dark' ? 'dark' : 'light'}`} id="exampleFormControlTextarea1" rows="6" cols="40" placeholder="enter the new word" value={word} onChange={changeWord}></textarea>
-    <button type="button" className={`btn btn-outline-${props.mode === "dark" ? "light" : "dark"}`} onClick={() => {props.removeFunctionality('')}}>close</button>
+    <h5 className="card-title mb-4">find and replace</h5>
+   <textarea className={`mb-4 form-control bg-${props.mode === 'dark' ? 'dark' : 'light'}`} id="exampleFormControlTextarea1" rows="1" cols="10" placeholder="enter the word to be replaced" value={word} onChange={changeWord}></textarea>
+    <textarea className={`mb-4 form-control bg-${props.mode === 'dark' ? 'dark' : 'light'}`} id="exampleFormControlTextarea1" rows="1" cols="10" placeholder="enter the new word" value={word} onChange={changeWord}></textarea>
+    <button type="button" className={`mt-4 btn btn-outline-${props.mode === "dark" ? "light" : "dark"}`} onClick={() => {props.removeFunctionality('')}}>close</button>
   </div>
 </div>
         )
